@@ -1,0 +1,175 @@
+{
+    "version": 1,
+    "name": "CarInputActions",
+    "maps": [
+        {
+            "name": "CarMap",
+            "id": "bec18e3f-2e39-4f35-b306-d2ac522e5bc3",
+            "actions": [
+                {
+                    "name": "WheelFL_Forward",
+                    "type": "Button",
+                    "id": "636b1dac-2106-4ba8-a1aa-fdab8f8fe04b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelFL_Backward",
+                    "type": "Button",
+                    "id": "acae571f-4616-4c2a-8566-465778bc240b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelFR_Forward",
+                    "type": "Button",
+                    "id": "7b76b273-a48d-48e9-8b1c-4042ccb42100",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelFR_Backward",
+                    "type": "Button",
+                    "id": "f5d447ab-21d6-49dc-be7b-e82f0628f3a5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelRL_Forward",
+                    "type": "Button",
+                    "id": "982efbee-efa6-4bca-8968-2c3ec27cafa4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelRL_Backward",
+                    "type": "Button",
+                    "id": "362603d3-f28a-4d4b-8551-cfc7e1344bd9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelRR_Forward",
+                    "type": "Button",
+                    "id": "aa1e1c52-9335-4eec-8602-8215aba83f24",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "WheelRR_Backward",
+                    "type": "Button",
+                    "id": "4a6e7dc5-42cc-4d45-8cee-a8270b1cacab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e474c0e8-26d3-44e3-9109-f872eb91c476",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelFL_Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fc9c91b7-c1a6-4eb6-b56a-42f8268aa313",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelFL_Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1c29cd63-ff0a-49da-bb0f-a409040f7069",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelFR_Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "85449c74-88f3-4b29-89d0-ff2491ff4d15",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelFR_Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1db18ff4-89f7-4cc1-ba04-cb6eedc3cbea",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelRL_Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7d837a65-9bfb-4886-a0bd-019117b6107b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelRL_Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fefdd8ff-33cc-44b8-b287-a11e457fe349",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelRR_Forward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bbdf25e4-53c5-4280-939f-d6ce9404bdad",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "WheelRR_Backward",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
