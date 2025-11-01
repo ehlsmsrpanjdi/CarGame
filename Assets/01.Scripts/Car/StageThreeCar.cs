@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class IndependentWheelController : MonoBehaviour
+public class StageThreeCar : MonoBehaviour
 {
     [Header("Wheel Transforms")]
     public Transform wheelFL; // Front Left
@@ -64,29 +64,18 @@ public class IndependentWheelController : MonoBehaviour
     {
         inputActions.Enable();
 
-        // Front Left 바인딩
+        // ✅ 앞바퀴만 입력 받기
         inputActions.Car.WheelFL_Forward.performed += ctx => inputFL = 1f;
         inputActions.Car.WheelFL_Forward.canceled += ctx => inputFL = 0f;
         inputActions.Car.WheelFL_Backward.performed += ctx => inputFL = -1f;
         inputActions.Car.WheelFL_Backward.canceled += ctx => inputFL = 0f;
 
-        // Front Right 바인딩
         inputActions.Car.WheelFR_Forward.performed += ctx => inputFR = 1f;
         inputActions.Car.WheelFR_Forward.canceled += ctx => inputFR = 0f;
         inputActions.Car.WheelFR_Backward.performed += ctx => inputFR = -1f;
         inputActions.Car.WheelFR_Backward.canceled += ctx => inputFR = 0f;
 
-        // Rear Left 바인딩
-        inputActions.Car.WheelRL_Forward.performed += ctx => inputRL = 1f;
-        inputActions.Car.WheelRL_Forward.canceled += ctx => inputRL = 0f;
-        inputActions.Car.WheelRL_Backward.performed += ctx => inputRL = -1f;
-        inputActions.Car.WheelRL_Backward.canceled += ctx => inputRL = 0f;
-
-        // Rear Right 바인딩
-        inputActions.Car.WheelRR_Forward.performed += ctx => inputRR = 1f;
-        inputActions.Car.WheelRR_Forward.canceled += ctx => inputRR = 0f;
-        inputActions.Car.WheelRR_Backward.performed += ctx => inputRR = -1f;
-        inputActions.Car.WheelRR_Backward.canceled += ctx => inputRR = 0f;
+        // 뒷바퀴 입력 없음!
     }
 
     void OnDisable()
@@ -139,6 +128,7 @@ public class IndependentWheelController : MonoBehaviour
     {
         if (wheel == null) return;
 
+
         // Raycast로 지면 확인
         RaycastHit hit;
         bool isGrounded = Physics.Raycast(wheel.position, -transform.up, out hit, groundCheckDistance);
@@ -164,6 +154,7 @@ public class IndependentWheelController : MonoBehaviour
         // 횡방향 마찰력 = 미끄러지는 속도에 반비례하는 힘
         float lateralFrictionForce = -sidewaysVelocity * sidewaysFriction * rb.mass * wheelWeight;
         rb.AddForceAtPosition(sidewaysDir * lateralFrictionForce, wheel.position);
+
 
         // === 3. 종방향 마찰/저항 (Forward Friction) ===
         // 바퀴가 구르지 않을 때 (input == 0) 앞뒤 마찰 적용

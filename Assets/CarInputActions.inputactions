@@ -3,7 +3,7 @@
     "name": "CarInputActions",
     "maps": [
         {
-            "name": "CarMap",
+            "name": "Car",
             "id": "bec18e3f-2e39-4f35-b306-d2ac522e5bc3",
             "actions": [
                 {

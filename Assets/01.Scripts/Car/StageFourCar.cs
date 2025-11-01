@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class IndependentWheelController : MonoBehaviour
+public class StageFourCar : MonoBehaviour
 {
     [Header("Wheel Transforms")]
     public Transform wheelFL; // Front Left
@@ -13,7 +13,7 @@ public class IndependentWheelController : MonoBehaviour
     public float motorTorque = 3000f;
 
     [Tooltip("바퀴 1개만 작동 시 힘 배율 (1.0보다 크면 개별 바퀴가 더 강함)")]
-    public float singleWheelMultiplier = 1.5f;
+    public float singleWheelMultiplier = 0.8f;
 
     [Tooltip("전체 최대 힘 제한")]
     public float maxTotalForce = 4000f;

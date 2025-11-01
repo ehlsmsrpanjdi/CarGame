@@ -89,7 +89,7 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
     ""name"": ""CarInputActions"",
     ""maps"": [
         {
-            ""name"": ""CarMap"",
+            ""name"": ""Car"",
             ""id"": ""bec18e3f-2e39-4f35-b306-d2ac522e5bc3"",
             ""actions"": [
                 {
@@ -259,21 +259,21 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
-        // CarMap
-        m_CarMap = asset.FindActionMap("CarMap", throwIfNotFound: true);
-        m_CarMap_WheelFL_Forward = m_CarMap.FindAction("WheelFL_Forward", throwIfNotFound: true);
-        m_CarMap_WheelFL_Backward = m_CarMap.FindAction("WheelFL_Backward", throwIfNotFound: true);
-        m_CarMap_WheelFR_Forward = m_CarMap.FindAction("WheelFR_Forward", throwIfNotFound: true);
-        m_CarMap_WheelFR_Backward = m_CarMap.FindAction("WheelFR_Backward", throwIfNotFound: true);
-        m_CarMap_WheelRL_Forward = m_CarMap.FindAction("WheelRL_Forward", throwIfNotFound: true);
-        m_CarMap_WheelRL_Backward = m_CarMap.FindAction("WheelRL_Backward", throwIfNotFound: true);
-        m_CarMap_WheelRR_Forward = m_CarMap.FindAction("WheelRR_Forward", throwIfNotFound: true);
-        m_CarMap_WheelRR_Backward = m_CarMap.FindAction("WheelRR_Backward", throwIfNotFound: true);
+        // Car
+        m_Car = asset.FindActionMap("Car", throwIfNotFound: true);
+        m_Car_WheelFL_Forward = m_Car.FindAction("WheelFL_Forward", throwIfNotFound: true);
+        m_Car_WheelFL_Backward = m_Car.FindAction("WheelFL_Backward", throwIfNotFound: true);
+        m_Car_WheelFR_Forward = m_Car.FindAction("WheelFR_Forward", throwIfNotFound: true);
+        m_Car_WheelFR_Backward = m_Car.FindAction("WheelFR_Backward", throwIfNotFound: true);
+        m_Car_WheelRL_Forward = m_Car.FindAction("WheelRL_Forward", throwIfNotFound: true);
+        m_Car_WheelRL_Backward = m_Car.FindAction("WheelRL_Backward", throwIfNotFound: true);
+        m_Car_WheelRR_Forward = m_Car.FindAction("WheelRR_Forward", throwIfNotFound: true);
+        m_Car_WheelRR_Backward = m_Car.FindAction("WheelRR_Backward", throwIfNotFound: true);
     }
 
     ~@CarInputActions()
     {
-        UnityEngine.Debug.Assert(!m_CarMap.enabled, "This will cause a leak and performance issues, CarInputActions.CarMap.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Car.enabled, "This will cause a leak and performance issues, CarInputActions.Car.Disable() has not been called.");
     }
 
     /// <summary>
@@ -346,64 +346,64 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // CarMap
-    private readonly InputActionMap m_CarMap;
-    private List<ICarMapActions> m_CarMapActionsCallbackInterfaces = new List<ICarMapActions>();
-    private readonly InputAction m_CarMap_WheelFL_Forward;
-    private readonly InputAction m_CarMap_WheelFL_Backward;
-    private readonly InputAction m_CarMap_WheelFR_Forward;
-    private readonly InputAction m_CarMap_WheelFR_Backward;
-    private readonly InputAction m_CarMap_WheelRL_Forward;
-    private readonly InputAction m_CarMap_WheelRL_Backward;
-    private readonly InputAction m_CarMap_WheelRR_Forward;
-    private readonly InputAction m_CarMap_WheelRR_Backward;
+    // Car
+    private readonly InputActionMap m_Car;
+    private List<ICarActions> m_CarActionsCallbackInterfaces = new List<ICarActions>();
+    private readonly InputAction m_Car_WheelFL_Forward;
+    private readonly InputAction m_Car_WheelFL_Backward;
+    private readonly InputAction m_Car_WheelFR_Forward;
+    private readonly InputAction m_Car_WheelFR_Backward;
+    private readonly InputAction m_Car_WheelRL_Forward;
+    private readonly InputAction m_Car_WheelRL_Backward;
+    private readonly InputAction m_Car_WheelRR_Forward;
+    private readonly InputAction m_Car_WheelRR_Backward;
     /// <summary>
-    /// Provides access to input actions defined in input action map "CarMap".
+    /// Provides access to input actions defined in input action map "Car".
     /// </summary>
-    public struct CarMapActions
+    public struct CarActions
     {
         private @CarInputActions m_Wrapper;
 
         /// <summary>
         /// Construct a new instance of the input action map wrapper class.
         /// </summary>
-        public CarMapActions(@CarInputActions wrapper) { m_Wrapper = wrapper; }
+        public CarActions(@CarInputActions wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelFL_Forward".
+        /// Provides access to the underlying input action "Car/WheelFL_Forward".
         /// </summary>
-        public InputAction @WheelFL_Forward => m_Wrapper.m_CarMap_WheelFL_Forward;
+        public InputAction @WheelFL_Forward => m_Wrapper.m_Car_WheelFL_Forward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelFL_Backward".
+        /// Provides access to the underlying input action "Car/WheelFL_Backward".
         /// </summary>
-        public InputAction @WheelFL_Backward => m_Wrapper.m_CarMap_WheelFL_Backward;
+        public InputAction @WheelFL_Backward => m_Wrapper.m_Car_WheelFL_Backward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelFR_Forward".
+        /// Provides access to the underlying input action "Car/WheelFR_Forward".
         /// </summary>
-        public InputAction @WheelFR_Forward => m_Wrapper.m_CarMap_WheelFR_Forward;
+        public InputAction @WheelFR_Forward => m_Wrapper.m_Car_WheelFR_Forward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelFR_Backward".
+        /// Provides access to the underlying input action "Car/WheelFR_Backward".
         /// </summary>
-        public InputAction @WheelFR_Backward => m_Wrapper.m_CarMap_WheelFR_Backward;
+        public InputAction @WheelFR_Backward => m_Wrapper.m_Car_WheelFR_Backward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelRL_Forward".
+        /// Provides access to the underlying input action "Car/WheelRL_Forward".
         /// </summary>
-        public InputAction @WheelRL_Forward => m_Wrapper.m_CarMap_WheelRL_Forward;
+        public InputAction @WheelRL_Forward => m_Wrapper.m_Car_WheelRL_Forward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelRL_Backward".
+        /// Provides access to the underlying input action "Car/WheelRL_Backward".
         /// </summary>
-        public InputAction @WheelRL_Backward => m_Wrapper.m_CarMap_WheelRL_Backward;
+        public InputAction @WheelRL_Backward => m_Wrapper.m_Car_WheelRL_Backward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelRR_Forward".
+        /// Provides access to the underlying input action "Car/WheelRR_Forward".
         /// </summary>
-        public InputAction @WheelRR_Forward => m_Wrapper.m_CarMap_WheelRR_Forward;
+        public InputAction @WheelRR_Forward => m_Wrapper.m_Car_WheelRR_Forward;
         /// <summary>
-        /// Provides access to the underlying input action "CarMap/WheelRR_Backward".
+        /// Provides access to the underlying input action "Car/WheelRR_Backward".
         /// </summary>
-        public InputAction @WheelRR_Backward => m_Wrapper.m_CarMap_WheelRR_Backward;
+        public InputAction @WheelRR_Backward => m_Wrapper.m_Car_WheelRR_Backward;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
-        public InputActionMap Get() { return m_Wrapper.m_CarMap; }
+        public InputActionMap Get() { return m_Wrapper.m_Car; }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
         public void Enable() { Get().Enable(); }
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
@@ -411,9 +411,9 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
         public bool enabled => Get().enabled;
         /// <summary>
-        /// Implicitly converts an <see ref="CarMapActions" /> to an <see ref="InputActionMap" /> instance.
+        /// Implicitly converts an <see ref="CarActions" /> to an <see ref="InputActionMap" /> instance.
         /// </summary>
-        public static implicit operator InputActionMap(CarMapActions set) { return set.Get(); }
+        public static implicit operator InputActionMap(CarActions set) { return set.Get(); }
         /// <summary>
         /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
         /// </summary>
@@ -421,11 +421,11 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
         /// </remarks>
-        /// <seealso cref="CarMapActions" />
-        public void AddCallbacks(ICarMapActions instance)
+        /// <seealso cref="CarActions" />
+        public void AddCallbacks(ICarActions instance)
         {
-            if (instance == null || m_Wrapper.m_CarMapActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_CarMapActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_CarActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CarActionsCallbackInterfaces.Add(instance);
             @WheelFL_Forward.started += instance.OnWheelFL_Forward;
             @WheelFL_Forward.performed += instance.OnWheelFL_Forward;
             @WheelFL_Forward.canceled += instance.OnWheelFL_Forward;
@@ -458,8 +458,8 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
         /// </remarks>
-        /// <seealso cref="CarMapActions" />
-        private void UnregisterCallbacks(ICarMapActions instance)
+        /// <seealso cref="CarActions" />
+        private void UnregisterCallbacks(ICarActions instance)
         {
             @WheelFL_Forward.started -= instance.OnWheelFL_Forward;
             @WheelFL_Forward.performed -= instance.OnWheelFL_Forward;
@@ -488,12 +488,12 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         }
 
         /// <summary>
-        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="CarMapActions.UnregisterCallbacks(ICarMapActions)" />.
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="CarActions.UnregisterCallbacks(ICarActions)" />.
         /// </summary>
-        /// <seealso cref="CarMapActions.UnregisterCallbacks(ICarMapActions)" />
-        public void RemoveCallbacks(ICarMapActions instance)
+        /// <seealso cref="CarActions.UnregisterCallbacks(ICarActions)" />
+        public void RemoveCallbacks(ICarActions instance)
         {
-            if (m_Wrapper.m_CarMapActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_CarActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
@@ -503,27 +503,27 @@ public partial class @CarInputActions: IInputActionCollection2, IDisposable
         /// <remarks>
         /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
         /// </remarks>
-        /// <seealso cref="CarMapActions.AddCallbacks(ICarMapActions)" />
-        /// <seealso cref="CarMapActions.RemoveCallbacks(ICarMapActions)" />
-        /// <seealso cref="CarMapActions.UnregisterCallbacks(ICarMapActions)" />
-        public void SetCallbacks(ICarMapActions instance)
+        /// <seealso cref="CarActions.AddCallbacks(ICarActions)" />
+        /// <seealso cref="CarActions.RemoveCallbacks(ICarActions)" />
+        /// <seealso cref="CarActions.UnregisterCallbacks(ICarActions)" />
+        public void SetCallbacks(ICarActions instance)
         {
-            foreach (var item in m_Wrapper.m_CarMapActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_CarActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_CarMapActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_CarActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
     /// <summary>
-    /// Provides a new <see cref="CarMapActions" /> instance referencing this action map.
+    /// Provides a new <see cref="CarActions" /> instance referencing this action map.
     /// </summary>
-    public CarMapActions @CarMap => new CarMapActions(this);
+    public CarActions @Car => new CarActions(this);
     /// <summary>
-    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "CarMap" which allows adding and removing callbacks.
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Car" which allows adding and removing callbacks.
     /// </summary>
-    /// <seealso cref="CarMapActions.AddCallbacks(ICarMapActions)" />
-    /// <seealso cref="CarMapActions.RemoveCallbacks(ICarMapActions)" />
-    public interface ICarMapActions
+    /// <seealso cref="CarActions.AddCallbacks(ICarActions)" />
+    /// <seealso cref="CarActions.RemoveCallbacks(ICarActions)" />
+    public interface ICarActions
     {
         /// <summary>
         /// Method invoked when associated input action "WheelFL_Forward" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
